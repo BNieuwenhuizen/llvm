@@ -845,8 +845,8 @@ def int_amdgcn_tbuffer_store : Intrinsic <
   AMDGPURsrcIntrinsic<1>;
 
 class AMDGPUBufferAtomic : Intrinsic <
-  [llvm_i32_ty],
-  [llvm_i32_ty,       // vdata(VGPR)
+  [llvm_any_ty],
+  [llvm_any_ty,       // vdata(VGPR)
    llvm_v4i32_ty,     // rsrc(SGPR)
    llvm_i32_ty,       // vindex(VGPR)
    llvm_i32_ty,       // offset(SGPR/VGPR/imm)
@@ -864,9 +864,9 @@ def int_amdgcn_buffer_atomic_and : AMDGPUBufferAtomic;
 def int_amdgcn_buffer_atomic_or : AMDGPUBufferAtomic;
 def int_amdgcn_buffer_atomic_xor : AMDGPUBufferAtomic;
 def int_amdgcn_buffer_atomic_cmpswap : Intrinsic<
-  [llvm_i32_ty],
-  [llvm_i32_ty,       // src(VGPR)
-   llvm_i32_ty,       // cmp(VGPR)
+  [llvm_any_ty],
+  [llvm_any_ty,       // src(VGPR)
+   llvm_any_ty,       // cmp(VGPR)
    llvm_v4i32_ty,     // rsrc(SGPR)
    llvm_i32_ty,       // vindex(VGPR)
    llvm_i32_ty,       // offset(SGPR/VGPR/imm)
