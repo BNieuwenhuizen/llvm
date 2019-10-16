@@ -418,6 +418,8 @@ public:
   }
 
   void setForceEmitWaitcnt() {
+    ForceEmitWaitcnt[LGKM_CNT] = true;
+
 // For non-debug builds, ForceEmitWaitcnt has been initialized to false;
 // For debug builds, get the debug counter info and adjust if need be
 #ifndef NDEBUG
